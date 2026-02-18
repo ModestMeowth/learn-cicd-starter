@@ -36,3 +36,12 @@ jobs:
 
       - name: Check formatting
         run: test -z $(go fmt ./...)
+
+      - name: Install staticcheck
+        uses: dominikh/static-check-action@v1
+        with:
+          version: "latest"
+          install-go: false
+
+      - name: Run static tests
+        run: staticcheck ./...
