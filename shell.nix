@@ -7,6 +7,8 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     go
     gopls
-    gofumpt
+
+    go-tools # staticcheck
+    gosec
   ];
 }
